@@ -7,7 +7,7 @@
   height: 100%;
   padding-left: 35px;
   padding-top:10px;
-  background-image: url("/bg.jpg");
+  background-image: url("../../statics/bg.jpg");
 }
 .container-title {
   padding-left: 35px;
