@@ -3,13 +3,14 @@
   color: #fff;
 }
 
-.container {
+.container-angular {
   height: 100%;
   padding-left: 35px;
   padding-top:10px;
   background-image: url("../../statics/bg.jpg");
 }
-.container-title {
+
+.container-angular-title {
   padding-left: 35px;
   padding-top: 10px
 }
@@ -21,14 +22,7 @@ table {
   top: -5px;
 }
 
-.row {
-  display:flex;
-  flex-wrap: wrap;
-}
 
-.col-6 {
-  width: 50%;
-}
 .item-col{
   padding: 12px; text-align: center; display: block ruby
 }

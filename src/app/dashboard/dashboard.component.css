@@ -4,11 +4,17 @@
   width: 80%; opacity: 0.9
 }
 
-.container {
+.container-angular {
   background-image: url(../statics/bg.jpg);
   height: 100%;
 }
-.container-title {
+.bg-angular{
+  background-image: url(../statics/bg.jpg);
+}
+.container-angular-info{
+  background-image: url(../statics/bg.jpg);
+}
+.container-angular-title {
   padding-left: 35px;
   padding-top: 10px
 }

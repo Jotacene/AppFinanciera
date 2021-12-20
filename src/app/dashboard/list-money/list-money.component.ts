@@ -15,7 +15,7 @@ export class ListMoneyComponent implements OnInit {
   tipo!: any;
   datosIndicador!: any;
   valorActual: number = 0;
-  informacionIndicador!: any;
+  informacionIndicador: any = Object;
 
 
   chartOptions: Highcharts.Options = {

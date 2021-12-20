@@ -1,13 +1,15 @@
-<div class="container">
-  <h1 class="container-title" style="font-weight: bold">Indicadores</h1>
-  <mat-grid-list cols="12" style="background-image: url('../statics/bg.jpg')">
-    <mat-grid-tile colspan="3" *ngFor="let indicador of indicadores">
-      <mat-card
-        *ngIf="loader"
-        class="card-indicador"
-        style="text-align: center; display: block ruby"
+<div class="container-angular">
+  <h1 class="container-angular-title" style="font-weight: bold">Indicadores</h1>
+  <div class="row bg-angular">
+    <div
+      class="col-lg-3 col-md-3 col-sm-6"
+      *ngFor="let indicador of indicadores"
+      style="margin-bottom: 20px"
+    >
+      <mat-card *ngIf="loader" class="card-indicador"
         ><mat-spinner></mat-spinner>
       </mat-card>
+
       <mat-card *ngIf="!loader" class="card-indicador">
         <mat-card-header>
           <mat-card-title>{{ indicador[1].nombre }}</mat-card-title>
@@ -30,6 +32,6 @@
           </button>
         </mat-card-actions>
       </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+  </div>
 </div>
