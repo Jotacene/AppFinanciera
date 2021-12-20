@@ -1,0 +1,34 @@
+.card-indicador {
+  background-color: #121212;
+  color: #fff;
+}
+
+.container {
+  height: 100%;
+  padding-left: 35px;
+  padding-top:10px;
+  background-image: url("/bg.jpg");
+}
+.container-title {
+  padding-left: 35px;
+  padding-top: 10px
+}
+table {
+  width: 50%;
+}
+.aligned-with-icon{
+  position: relative;
+  top: -5px;
+}
+
+.row {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.col-6 {
+  width: 50%;
+}
+.item-col{
+  padding: 12px; text-align: center; display: block ruby
+}

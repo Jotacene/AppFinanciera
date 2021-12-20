@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 class="container-title" style="font-weight: bold">Indicadores</h1>
+  <mat-grid-list cols="12" style="background-image: url('/bg.jpg')">
+    <mat-grid-tile colspan="3" *ngFor="let indicador of indicadores">
+      <mat-card
+        *ngIf="loader"
+        class="card-indicador"
+        style="text-align: center; display: block ruby"
+        ><mat-spinner></mat-spinner>
+      </mat-card>
+      <mat-card *ngIf="!loader" class="card-indicador">
+        <mat-card-header>
+          <mat-card-title>{{ indicador[1].nombre }}</mat-card-title>
+          <mat-card-subtitle style="color: #fff"
+            >en {{ indicador[1].unidad_medida }} al
+            {{ fecha }}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-content style="margin: 0 16px">
+          <p *ngIf="indicador[1].unidad_medida === 'Porcentaje'">
+            {{ indicador[1].valor }} %
+          </p>
+          <p *ngIf="indicador[1].unidad_medida !== 'Porcentaje'">
+            ${{ indicador[1].valor }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button routerLink="/money/{{ indicador[1].codigo }}">
+            Más información
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

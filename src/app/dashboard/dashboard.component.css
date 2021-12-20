@@ -1,0 +1,14 @@
+.card-indicador {
+  background-color: #121212;
+  color: #fff;
+  width: 80%; opacity: 0.9
+}
+
+.container {
+  background-image: url("/bg.jpg");
+  height: 100%;
+}
+.container-title {
+  padding-left: 35px;
+  padding-top: 10px
+}

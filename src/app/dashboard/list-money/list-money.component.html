@@ -1,0 +1,95 @@
+<div class="container">
+  <h1>Indicador de: {{ informacionIndicador.nombre }}</h1>
+  <div class="row">
+    <div class="col-6">
+      <div style="padding: 12px">
+        <highcharts-chart
+          [Highcharts]="highcharts"
+          [options]="chartOptions"
+          style="width: 100%; height: auto; display: block"
+        >
+        </highcharts-chart>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="item-col">
+        <table
+          mat-table
+          [dataSource]="datosIndicador"
+          class="mat-elevation-z8"
+          style="background-color: #414141"
+        >
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef style="color: #fff">Fecha</th>
+            <td mat-cell *matCellDef="let element" style="color: #fff">
+              {{ element.fecha.split("T")[0] }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef style="color: #fff">valor</th>
+            <td
+              mat-cell
+              *matCellDef="let element; let i = index"
+              style="color: #fff"
+            >
+              <div *ngIf="informacionIndicador.unidad_medida !== 'Porcentaje'">
+                <mat-icon *ngIf="datosIndicador.length - 1 > i">
+                  <span
+                    style="color: red"
+                    *ngIf="datosIndicador[i + 1].valor > element.valor"
+                    >keyboard_arrow_down</span
+                  >
+                  <span
+                    style="color: green"
+                    *ngIf="datosIndicador[i + 1].valor < element.valor"
+                    >keyboard_arrow_up</span
+                  >
+                  <span
+                    style="color: skyblue"
+                    *ngIf="datosIndicador[i + 1].valor === element.valor"
+                    >compare_arrows</span
+                  >
+                </mat-icon>
+                <mat-icon
+                  *ngIf="datosIndicador.length - 1 === i"
+                  style="visibility: hidden"
+                >
+                  compare_arrows
+                </mat-icon>
+                ${{ element.valor }}
+              </div>
+              <div *ngIf="informacionIndicador.unidad_medida === 'Porcentaje'">
+                <mat-icon *ngIf="datosIndicador.length - 1 > i">
+                  <span
+                    style="color: red"
+                    *ngIf="datosIndicador[i + 1].valor > element.valor"
+                    >keyboard_arrow_down</span
+                  >
+                  <span
+                    style="color: green"
+                    *ngIf="datosIndicador[i + 1].valor < element.valor"
+                    >keyboard_arrow_up</span
+                  >
+                  <span
+                    style="color: skyblue"
+                    *ngIf="datosIndicador[i + 1].valor === element.valor"
+                    >compare_arrows</span
+                  >
+                </mat-icon>
+                <mat-icon
+                  *ngIf="datosIndicador.length - 1 === i"
+                  style="visibility: hidden"
+                >
+                  compare_arrows
+                </mat-icon>
+                <span class="aligned-with-icon"> {{ element.valor }} % </span>
+              </div>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
